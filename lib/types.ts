@@ -1,0 +1,27 @@
+import { Currency } from 'lucide-react';
+import { z } from 'zod';
+
+export const RecipeSchema = z.object({
+  name: z.string(),
+  ingredients: z.array(z.object({
+    name: z.string(),
+    amount: z.string()
+  })),
+  steps: z.array(z.string()),
+  linksVideoYouTube: z.array(z.object({
+    title: z.string(),
+    url: z.string()
+  })),
+  imageUnsplash: z.string()
+});
+
+export const ImageRecipeDescriptionSchema = z.object({
+  description: z.string(),
+  amount: z.number(),
+  currency: z.string(),
+  price: z.number(),
+  image: z.string(),
+});
+
+export type Recipe = z.infer<typeof RecipeSchema>;
+export type ImageRecipeDescription = z.infer<typeof ImageRecipeDescriptionSchema>;

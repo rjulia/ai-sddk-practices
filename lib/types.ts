@@ -20,7 +20,7 @@ export const ImageRecipeDescriptionSchema = z.object({
   amount: z.number(),
   currency: z.string(),
   price: z.number(),
-  image: z.string(),
+  type: z.enum(['meals and refreshments', 'Hotel accommodation', 'transfer to or from the airport to the place to accommodation', 'communication', 'other'])
 });
 
 export type Recipe = z.infer<typeof RecipeSchema>;

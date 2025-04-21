@@ -1,4 +1,3 @@
-
 import { ImageRecipeDescription } from '@/lib/types';
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
@@ -10,15 +9,17 @@ const onDrop = useCallback(async (acceptedFiles: any[]) => {
         const file = acceptedFiles[0];
         console.log("🚀 ~ onDrop ~ file:", file)
 
-        const formData = new FormData();
-        formData.append('file', file);
-
         try {
+            // Convert file to Uint8Array
+            const arrayBuffer = await file.arrayBuffer();
+            const uint8Array = new Uint8Array(arrayBuffer);
+            
             const response = await fetch('/api/image', {
                 method: 'POST',
-                headers: {  'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    image: file,
+                    imageData: Array.from(uint8Array), // Convert to regular array for JSON serialization
+                    mimeType: file.type,
                 }),
             });
             if (response.ok) {
@@ -72,7 +73,7 @@ const onDrop = useCallback(async (acceptedFiles: any[]) => {
             <p>Currency: <span>{data?.currency}</span></p>
             <p>Price: <span>{data?.price}</span></p>
             <p>Description: <span>{data?.description}</span></p>
-            <p>Image: <span>{data?.image}</span></p>
+            <p>Type: <span>{data?.type}</span></p>
         </div>
     </div>
   )

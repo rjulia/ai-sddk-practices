@@ -62,18 +62,18 @@ const onDrop = useCallback(async (acceptedFiles: any[]) => {
 
 
         <div>
-            <p>Drag and drop an image file here, or click to select a file.</p>
-            <p>Only one image file is allowed.</p>
-            <p>Supported formats: PNG, JPG, JPEG, GIF.</p>
-            <p>File size limit: 5MB.</p>
+            <p className="text-[10px]">Drag and drop an image file here, or click to select a file.</p>
+            <p className="text-[10px]">Only one image file is allowed.</p>
+            <p className="text-[10px]">Supported formats: PNG, JPG, JPEG, GIF.</p>
+            <p className="text-[10px]">File size limit: 5MB.</p>
         </div>
         <div className="mt-4">
             <p className="text-sm text-gray-500">Description of recipe</p>
-            <p>Amount: <span>{data?.amount}</span></p>
-            <p>Currency: <span>{data?.currency}</span></p>
-            <p>Price: <span>{data?.price}</span></p>
-            <p>Description: <span>{data?.description}</span></p>
-            <p>Type: <span>{data?.type}</span></p>
+            <p><span className="font-bold">Amount:</span> <span>{data?.amount}</span></p>
+            <p><span className="font-bold">Currency:</span> <span>{data?.currency}</span></p>
+            <p><span className="font-bold">Price:</span> <span>{data?.price}</span></p>
+            <p><span className="font-bold">Description:</span> <span>{data?.description}</span></p>
+            <p><span className="font-bold">Type:</span> <span>{data?.type}</span></p>
         </div>
     </div>
   )

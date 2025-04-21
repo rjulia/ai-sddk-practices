@@ -53,6 +53,14 @@ export default function RootLayout({
                       Expenses Reader
                     </NavigationMenuLink>
                   </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      href='/weather'
+                      className="text-white hover:text-yellow-300 transition-colors duration-200 font-medium"
+                    >
+                      Weather
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
                 </NavigationMenuList>
                 <NavigationMenuViewport />
               </NavigationMenu>

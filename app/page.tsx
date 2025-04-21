@@ -45,7 +45,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Image Analysis</h3>
             <p className="text-gray-600">Upload images and get AI-powered descriptions and insights.</p>
           </div>
-          
+          <Link href="/expenses-reader">
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
             <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
               <Code className="h-6 w-6 text-purple-600" />
@@ -53,6 +53,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Expenses Reader</h3>
             <p className="text-gray-600">Extract and analyze expense information from receipts and documents.</p>
           </div>
+          </Link>
         </section>
 
       </div>
